@@ -22,6 +22,7 @@ namespace MemoEditor_EX
             else
             {
                 MessageBox.Show("파일이 저장 되었습니다");
+
             }
             StreamWriter wFile = new StreamWriter(new FileStream(txtSaveFileName.Text, FileMode.Create));
             wFile.Write(txtMemo.Text); // 텍스트 박스 내용을 파일에 저장한다
@@ -41,7 +42,7 @@ namespace MemoEditor_EX
                 }
                 else
                 {
-                    MessageBox.Show("파일을 불러왔습니다");
+                    MessageBox.Show("파일을 불러왔습니다" + Path.GetFullPath(txtOpenFileName.Text));
                 }
 
                 txtMemo.Text += rFile.ReadLine();
