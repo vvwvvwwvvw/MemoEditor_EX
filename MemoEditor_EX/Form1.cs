@@ -1,5 +1,4 @@
-﻿using Microsoft.JScript;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -22,11 +21,14 @@ namespace MemoEditor_EX
             else
             {
                 MessageBox.Show("파일이 저장 되었습니다");
-
+                
+                
             }
             StreamWriter wFile = new StreamWriter(new FileStream(txtSaveFileName.Text, FileMode.Create));
             wFile.Write(txtMemo.Text); // 텍스트 박스 내용을 파일에 저장한다
             wFile.Close();
+            txtMemo.Clear();
+            txtSaveFileName.Clear();
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -42,13 +44,15 @@ namespace MemoEditor_EX
                 }
                 else
                 {
-                    MessageBox.Show("파일을 불러왔습니다" + Path.GetFullPath(txtOpenFileName.Text));
+                    MessageBox.Show("파일을 불러왔습니다" + Path.GetFullPath(txtOpenFileName.Text /**파일 경로 불러오기**/));
                 }
 
                 txtMemo.Text += rFile.ReadLine();
                 txtMemo.Text += "\r\n";
+                
             }
             rFile.Close();
+            txtOpenFileName.Clear();
         }
     }
 }

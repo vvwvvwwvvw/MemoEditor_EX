@@ -35,6 +35,7 @@
             this.txtOpenFileName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // txtMemo
@@ -125,6 +126,7 @@
         private System.Windows.Forms.TextBox txtOpenFileName;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 
